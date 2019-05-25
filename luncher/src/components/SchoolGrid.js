@@ -8,6 +8,10 @@ class SchoolGrid extends React.Component {
         error: null
     }
 
+    componentDidMount(props) {
+        this.props.dispSchoolGrid();
+    }
+
     render() {
         return (
             <div>

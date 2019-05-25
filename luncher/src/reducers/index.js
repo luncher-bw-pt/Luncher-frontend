@@ -1,4 +1,4 @@
-import { DISP_SCHOOL_GRID } from '../actions';
+import { DISP_SCHOOL_GRID, SUCCESS, FAILURE } from '../actions';
 
 const initialState = {
     schools: [],
@@ -6,11 +6,24 @@ const initialState = {
 }
 
 export const schoolReducer = (state = initialState, action) => {
-    switch(action.type) {
+    switch (action.type) {
         case DISP_SCHOOL_GRID: {
             return {
-                schools: action.payload
+                ...state,
+                error: null
             }
+        }
+        
+        case SUCCESS: {
+            console.log(action.payload)
+            return {
+                ...state,
+                schools: [...action.payload]
+            }
+        }
+
+        case FAILURE: {
+            return action.payload
         }
         default:
             return state;
