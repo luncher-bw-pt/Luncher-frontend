@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { dispSchoolGrid } from '../actions';
+import './SchoolGrid.css';
 
 class SchoolGrid extends React.Component {
     state = {
@@ -10,15 +11,28 @@ class SchoolGrid extends React.Component {
 
     componentDidMount(props) {
         this.props.dispSchoolGrid();
+        console.log(this.props.schools);
     }
 
     render() {
         return (
             <div>
                 <table>
-                    {this.props.schools.map((school) => (
+                    <tr className='tableHead'>
+                        <td className="schoolName">School Name</td>
+                        <td className="schoolState">State</td>
+                        <td className="schoolZIP">ZIP Code</td>
+                        <td className="schoolFunds">Funds Needed</td>
+                        <td className="schoolEmail">Contact Email</td>
+                    </tr>
+
+                    {this.props.schools.map((school, id) => (
                         <tr>
-                            {school.school}
+                            <td className="schoolName">{school.schoolName}</td>
+                            <td className="schoolState">{school.state}</td>
+                            <td className="schoolZIP">{school.zip}</td>
+                            <td className="schoolFunds">{school.fundsNeeded}</td>
+                            <td className="schoolEmail">{school.contact}</td>
                         </tr>
                     ))}
                 </table>

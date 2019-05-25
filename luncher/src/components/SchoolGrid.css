@@ -1,0 +1,38 @@
+table {
+    margin: 0 auto;
+    border: solid black 1px;
+}
+
+.tableHead {
+    font-weight: bolder;
+    text-align: center;
+}
+
+td {
+    height: 50px;
+    text-align: left;
+    border: solid black 1px;
+    padding: 10px;
+}
+
+
+
+.schoolName {
+    width: 300px
+}
+
+.schoolState {
+    width: 50px
+}
+
+.schoolZIP {
+    width: 50px
+}
+
+.schoolFunds {
+    width: 100px
+}
+
+.schoolEmail {
+    width: 100px
+}

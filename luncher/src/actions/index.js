@@ -9,7 +9,7 @@ export const dispSchoolGrid = () => dispatch => {
     dispatch({ type: DISP_SCHOOL_GRID });
     axios
         .get('https://luncher-backend.herokuapp.com/api/schools')
-        .then(res => dispatch({ type: SUCCESS, payload: res.data.schools }))
+        .then(res => dispatch({ type: SUCCESS, payload: res.data }))
         .catch(err => dispatch({ type: FAILURE, payload: err}))
     
 }

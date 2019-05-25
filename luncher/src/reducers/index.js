@@ -13,18 +13,18 @@ export const schoolReducer = (state = initialState, action) => {
                 error: null
             }
         }
-        
         case SUCCESS: {
             console.log(action.payload)
             return {
                 ...state,
-                schools: [...action.payload]
+                schools: action.payload
             }
         }
-
-        case FAILURE: {
-            return action.payload
-        }
+        case FAILURE: 
+            return {
+                ...state,
+                error: action.payload
+            }
         default:
             return state;
     }
