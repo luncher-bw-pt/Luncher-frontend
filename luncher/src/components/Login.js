@@ -21,33 +21,41 @@ class Login extends React.Component {
                 }
         console.log(user)
         axios
-            .post('https://luncher-backend.herokuapp.com', user)
+            .post('https://luncher-backend.herokuapp.com/api/login', user)
             .then(res => {
                 console.log("LOGIN RESPONSE", res.data)
                 localStorage.setItem('token', (res.data.token));
             })
             .catch(err => console.error('login error:', err))
+    }
 
+    changeHandler = e => {
+        const {name, value} = e.target;
+        this.setState({[name]: value});
     }
 
     render() {
         return (
-            <form > 
-                <input 
-                    name="username"
-                    placeholder="Username"
-                    type="text"
-                    onChange={this.changeHandler}
-                />
-                <input 
-                    name="password"
-                    placeholder="Password"
-                    type="text"
-                    onChange={this.changeHandler}
-                />
-                <button>LOGIN</button>
-            
-            </form>
+            <div className="login-section">
+                <form > 
+                    <input 
+                        name="username"
+                        placeholder="Username"
+                        type="text"
+                        onChange={this.changeHandler}
+                    />
+                    <input 
+                        name="password"
+                        placeholder="Password"
+                        type="text"
+                        onChange={this.changeHandler}
+                    /> 
+                </form>
+
+                <div>
+                    <button>LOGIN</button>
+                </div>
+            </div>
         )
     }
 };

@@ -31,3 +31,22 @@
     transform: rotate(360deg);
   }
 }
+
+.login-section {
+  display: flex;
+  flex-direction: row;
+}
+
+form {
+  display: flex;
+  max-width: 300px;
+  width: 100px;
+  flex-direction: row;
+  
+}
+
+button {
+  
+  max-width: 100px;
+  width: 50px;
+}
