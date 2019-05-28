@@ -23,27 +23,29 @@ class Donor extends React.Component {
             <div>
                 <h1>Schools In Need</h1>
                 <h2>Click the school below that you wish to assist with your donation!</h2>
-                <table>
-                    <tr className='tableHead'>
-                        <td className="schoolName">School Name</td>
-                        <td className="schoolState">State</td>
-                        <td className="schoolZIP">ZIP Code</td>
-                        <td className="schoolFunds">Funds Needed</td>
-                        <td className="schoolEmail">Contact Email</td>
-                    </tr>
 
-                    {this.props.schools.map((school, id) => (
-                        <Link to={`/schools/${school.id}`}>
-                            <tr className='mainTable'>
-                                <td className="schoolName">{school.schoolName}</td>
-                                <td className="schoolState">{school.state}</td>
-                                <td className="schoolZIP">{school.zip}</td>
-                                <td className="schoolFunds">{school.fundsNeeded}</td>
-                                <td className="schoolEmail">{school.contact}</td>
-                            </tr>
+                <ul className='listHead'>
+                    <li className="schoolName">School Name</li>
+                    <li className="schoolState">State</li>
+                    <li className="schoolZIP">ZIP Code</li>
+                    <li className="schoolFunds">Funds Needed</li>
+                    <li className="schoolEmail">Contact Email</li>
+                </ul>
+
+                {this.props.schools.map((school, id) => (
+
+                    <ul className='listMain'>
+                        <Link to={`/school/${school.id}`} component={SingleSchool}>
+                            <li className="schoolName">{school.schoolName}</li>
                         </Link>
-                    ))}
-                </table>
+                        <li className="schoolState">{school.state}</li>
+                        <li className="schoolZIP">{school.zip}</li>
+                        <li className="schoolFunds">{school.fundsNeeded}</li>
+                        <li className="schoolEmail">{school.contact}</li>
+                    </ul>
+
+                ))}
+
             </div>
         )
     }

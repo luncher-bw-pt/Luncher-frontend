@@ -4,7 +4,7 @@ import { Route } from 'react-router-dom';
 const SingleSchool = (props) => {
     return (
         <div>
-            <Route path="/schools/:id">
+            <Route path={"/schools/:id"}>
                 {props}
             </Route>
         </div>
