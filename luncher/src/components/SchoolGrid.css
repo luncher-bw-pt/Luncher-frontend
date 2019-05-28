@@ -1,11 +1,13 @@
 table {
     margin: 0 auto;
     border: solid black 1px;
+    width: 600px;
 }
 
 .tableHead {
     font-weight: bolder;
     text-align: center;
+    margin: 0 auto;
 }
 
 td {
@@ -18,21 +20,21 @@ td {
 
 
 .schoolName {
-    width: 300px
+    min-width: 300px
 }
 
 .schoolState {
-    width: 50px
+    min-width: 50px
 }
 
 .schoolZIP {
-    width: 50px
+    min-width: 50px
 }
 
 .schoolFunds {
-    width: 100px
+    min-width: 100px
 }
 
 .schoolEmail {
-    width: 100px
+    min-width: 100px
 }

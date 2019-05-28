@@ -27,7 +27,7 @@ class SchoolGrid extends React.Component {
                     </tr>
 
                     {this.props.schools.map((school, id) => (
-                        <tr>
+                        <tr className='.mainTable'>
                             <td className="schoolName">{school.schoolName}</td>
                             <td className="schoolState">{school.state}</td>
                             <td className="schoolZIP">{school.zip}</td>
