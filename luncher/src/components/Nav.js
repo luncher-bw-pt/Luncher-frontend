@@ -7,8 +7,8 @@ const Nav = () => {
         <div className="navigation"> 
             <div className="tabs">
                 <Link to="/">Home</Link>
-                <Link to="/schools">Schools</Link>
                 <Link to="/donor">Donor</Link>
+                <Link to="/single-school">Schools</Link>
                 <Link to="/admin">Admin</Link>
             </div>
         </div>
