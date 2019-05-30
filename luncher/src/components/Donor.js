@@ -33,24 +33,24 @@ class Donor extends React.Component {
                 </ul>
 
                 {this.props.schools.map((school, id) => (
-
                     <ul className='listMain'>
-                        <Link to={`/school/${school.id}`} component={SingleSchool}>
-                            <li className="schoolName">{school.schoolName}</li>
-                        </Link>
+                        <li className="schoolName">
+                            <Link to={`/${school.id}`} component={ SingleSchool } className='link'>
+                                {school.schoolName}
+                            </Link>
+                        </li>
                         <li className="schoolState">{school.state}</li>
                         <li className="schoolZIP">{school.zip}</li>
                         <li className="schoolFunds">{school.fundsNeeded}</li>
                         <li className="schoolEmail">{school.contact}</li>
                     </ul>
-
                 ))}
-
             </div>
         )
     }
 }
 
+//{`/schools/${school.id}`}
 
 const mapStateToProps = state => {
     return {

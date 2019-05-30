@@ -18,6 +18,16 @@ ul {
     margin: 0 auto;
 }
 
+li {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: solid 1px lightgray;
+}
+
+.link {
+    text-decoration: none;
+    color: black;
+}
 
 
 .schoolName {
