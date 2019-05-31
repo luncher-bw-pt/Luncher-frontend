@@ -37,14 +37,21 @@ class SingleSchool extends React.Component {
     render() {
         const { schoolName, state, zip, fundsNeeded, contact } = this.state.school;
         return (
-            <div>
-                <h1>This is a school</h1>
-               <h2>{schoolName}</h2>
-               <h2>{state}</h2>
-               <h2>{zip}</h2>
-               <h2>{fundsNeeded}</h2>
-               <h2>{contact}</h2>
-
+            <div className="card-wrapper">
+                <h2>{schoolName}</h2>
+                <div className="school-state">
+                    <strong>State</strong>: <em>{state}</em>
+                </div>
+                <div className="school-state">
+                <strong>Zip</strong>: <em>{zip}</em>
+                </div>
+                <div className="school-state">
+                <strong>Funds Needed</strong>: $<em>{fundsNeeded}</em>
+                </div>
+                <div className="school-state">
+                <strong>Contact</strong>: $<em>{contact}</em>
+                </div>
+ 
             </div>
             
         )
