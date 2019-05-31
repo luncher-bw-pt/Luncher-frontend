@@ -42,14 +42,14 @@ class SingleSchool extends React.Component {
                 <div className="school-state">
                     <strong>State</strong>: <em>{state}</em>
                 </div>
-                <div className="school-state">
+                <div className="school-zip">
                 <strong>Zip</strong>: <em>{zip}</em>
                 </div>
-                <div className="school-state">
+                <div className="school-funds">
                 <strong>Funds Needed</strong>: $<em>{fundsNeeded}</em>
                 </div>
-                <div className="school-state">
-                <strong>Contact</strong>: $<em>{contact}</em>
+                <div className="school-contact">
+                <strong>Contact</strong>: <em>{contact}</em>
                 </div>
  
             </div>
