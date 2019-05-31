@@ -1,7 +1,7 @@
 import React from 'react';
 //import { BrowserRouter as Router } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import SingleSchool from "./SingleSchool";
+import SingleSchool from "./DonorSingleSchool";
 import { connect } from 'react-redux';
 import { dispSchoolGrid } from '../actions';
 import './SchoolGrid.css';
@@ -10,7 +10,8 @@ import './SchoolGrid.css';
 class Donor extends React.Component {
     state = {
         schools: [],
-        error: null
+        error: null,
+        sumNeeded: 0
     }
 
     componentDidMount(props) {
@@ -49,8 +50,6 @@ class Donor extends React.Component {
         )
     }
 }
-
-//{`/schools/${school.id}`}
 
 const mapStateToProps = state => {
     return {
