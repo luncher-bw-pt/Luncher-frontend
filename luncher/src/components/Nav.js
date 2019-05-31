@@ -7,7 +7,7 @@ const Nav = () => {
         <div className="navigation"> 
             <div className="tabs">
                 <Link to="/">Home</Link>
-                <Link to="/donor">Donor</Link>
+                <Link to="/donor">Donate</Link>
                 <Link to="/school">Schools</Link>
                 <Link to="/admin">Admin</Link>
             </div>

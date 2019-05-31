@@ -21,7 +21,7 @@ class Donor extends React.Component {
     render() {
         return (
             <div>
-                <h1>DONOR PAGE</h1>
+                <h1>DONATE TODAY!</h1>
                 <h2>Click the school below that you wish to assist with your donation!</h2>
 
                 <ul className='listHead'>

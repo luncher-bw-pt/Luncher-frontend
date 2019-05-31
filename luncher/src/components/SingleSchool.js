@@ -9,10 +9,7 @@ import { dispSchoolGrid } from '../actions';
 class SingleSchool extends React.Component {
         state = {
             school: '',
-            // state:'',
-            // zip: '',
-            // fundsNeeded: '',
-            // contact: ''
+            Donated: ''
         }
     
 
@@ -51,7 +48,13 @@ class SingleSchool extends React.Component {
                 <div className="school-contact">
                 <strong>Contact</strong>: <em>{contact}</em>
                 </div>
- 
+
+                <input 
+                    type="number" 
+                    placeholder="Enter Amount" 
+                />
+
+                <button>Submit Donation</button>
             </div>
             
         )
