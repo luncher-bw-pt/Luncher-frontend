@@ -6,6 +6,7 @@ import Admin from './components/Admin';
 import Donor from './components/Donor';
 import SchoolGrid from './components/SchoolGrid';
 import Nav from './components/Nav';
+import SingleSchool from './components/SingleSchool';
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
       {/* <Route exact path='/' component={Home} /> */}
       <Route path='/admin' component={Admin} />
       <Route path='/donor' component={Donor} />
-      <Route path='/single-school' component={SchoolGrid} />
+      <Route exact path='/school' component={SchoolGrid} />
+      <Route path='/school/:id' component={SingleSchool} />
     </div>
   );
 }
