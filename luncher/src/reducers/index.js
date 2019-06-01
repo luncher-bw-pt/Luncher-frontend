@@ -1,4 +1,4 @@
-import { DISP_SCHOOL_GRID, SUCCESS, FAILURE } from '../actions';
+import { DISP_SCHOOL_GRID, SUCCESS, FAILURE, DELETE_SCHOOL } from '../actions';
 
 const initialState = {
     schools: [],
@@ -13,8 +13,14 @@ export const schoolReducer = (state = initialState, action) => {
                 error: null
             }
         }
+        case DELETE_SCHOOL: {
+            return {
+                ...state,
+                schools: action.payload,
+                error: null
+            }
+        }
         case SUCCESS: {
-            console.log(action.payload)
             return {
                 ...state,
                 schools: action.payload

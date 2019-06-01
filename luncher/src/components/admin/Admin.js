@@ -1,17 +1,13 @@
 import React from 'react';
-//import { BrowserRouter as Router } from 'react-router-dom';
-import { Link } from 'react-router-dom';
-import SingleSchool from "./DonorSingleSchool";
 import { connect } from 'react-redux';
-import { dispSchoolGrid } from '../actions';
-import './SchoolGrid.css';
+import { dispSchoolGrid, deleteSchool } from '../../actions';
+import '../SchoolGrid.css';
 
 
-class Donor extends React.Component {
+class Admin extends React.Component {
     state = {
         schools: [],
         error: null,
-        sumNeeded: 0
     }
 
     componentDidMount(props) {
@@ -23,7 +19,6 @@ class Donor extends React.Component {
         return (
             <div>
                 <h1>Schools In Need</h1>
-                <h2>Click the school below that you wish to assist with your donation!</h2>
 
                 <ul className='listHead'>
                     <li className="schoolName">School Name</li>
@@ -33,19 +28,19 @@ class Donor extends React.Component {
                     <li className="schoolEmail">Contact Email</li>
                 </ul>
 
-                {this.props.schools.map((school, id) => (
+                {this.props.schools.map((school, id, ...props) => (
                     <ul className='listMain'>
-                        <li className="schoolName">
-                            <Link to={`/${school.id}`} component={ SingleSchool } className='link'>
-                                {school.schoolName}
-                            </Link>
-                        </li>
+                        <li className="schoolName">{school.schoolName}</li>
                         <li className="schoolState">{school.state}</li>
                         <li className="schoolZIP">{school.zip}</li>
                         <li className="schoolFunds">{school.fundsNeeded}</li>
                         <li className="schoolEmail">{school.contact}</li>
+                        <button>Edit</button>
+                        <button onClick={(props) => this.props.deleteSchool(props.id)}>Delete</button>
+                        
                     </ul>
                 ))}
+            <button className="addSchool">Add a School</button>
             </div>
         )
     }
@@ -60,6 +55,7 @@ const mapStateToProps = state => {
 export default connect(
     mapStateToProps,
     {
-        dispSchoolGrid
+        dispSchoolGrid,
+        deleteSchool
     }
-)(Donor);
+)(Admin);

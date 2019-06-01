@@ -1,12 +1,12 @@
 import React from 'react';
-import Donor from './components/Donor';
+import Admin from './components/admin/Admin';
 //import SchoolGrid from "./components/SchoolGrid";
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      < Donor />
+      <Admin />
 
     </div>
   );
