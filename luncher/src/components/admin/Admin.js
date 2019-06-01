@@ -15,6 +15,11 @@ class Admin extends React.Component {
         console.log(this.props.schools);
     }
 
+    /*deletingSchool = (e, id) => {
+        console.log(id)
+        deleteSchool(id);
+    }*/
+
     render() {
         return (
             <div>
@@ -28,15 +33,15 @@ class Admin extends React.Component {
                     <li className="schoolEmail">Contact Email</li>
                 </ul>
 
-                {this.props.schools.map((school, id, ...props) => (
-                    <ul className='listMain'>
+                {this.props.schools.map((school, id) => (
+                    <ul className='listMain' key='id'>
                         <li className="schoolName">{school.schoolName}</li>
                         <li className="schoolState">{school.state}</li>
                         <li className="schoolZIP">{school.zip}</li>
                         <li className="schoolFunds">{school.fundsNeeded}</li>
                         <li className="schoolEmail">{school.contact}</li>
                         <button>Edit</button>
-                        <button onClick={(props) => this.props.deleteSchool(props.id)}>Delete</button>
+                        <button onClick={() => this.props.deleteSchool(id)}>Delete</button>
                         
                     </ul>
                 ))}

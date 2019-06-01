@@ -16,12 +16,26 @@ export const dispSchoolGrid = () => dispatch => {
 
 }
 
-export const deleteSchool = id => dispatch => {
+/*export const deleteSchool = id => dispatch => {
     return dispatch => {
-        dispatch({ type: DELETE_SCHOOL });
+        console.log(id);
         axios
             .delete(`https://luncher-backend.herokuapp.com/api/schools/${id}`)
-            .then(res => dispatch({ type: SUCCESS, payload: res.data }))
+            .then(res => dispatch({ type: DELETE_SCHOOL, payload: res.data }))
             .catch(err => dispatch({ type: FAILURE, payload: err }))
+    }
+}*/
+
+export const deleteSchool = schoolId => {
+    return dispatch => {
+        console.log(schoolId);
+        axios
+            .delete(`https://luncher-backend.herokuapp.com/api/schools/${schoolId}`)
+            .then(res => {
+                dispatch({ type: DELETE_SCHOOL, payload: res.data })
+            })
+            .catch(err => {
+                dispatch({ type: FAILURE, payload: err })
+            })
     }
 }
