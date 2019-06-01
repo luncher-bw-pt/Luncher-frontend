@@ -49,12 +49,6 @@ class SingleSchool extends React.Component {
                 <strong>Contact</strong>: <em>{contact}</em>
                 </div>
 
-                <input 
-                    type="number" 
-                    placeholder="Enter Amount" 
-                />
-
-                <button>Submit Donation</button>
             </div>
             
         )

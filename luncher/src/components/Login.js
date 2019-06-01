@@ -22,7 +22,6 @@ class Login extends React.Component {
         axios
             .post('https://luncher-backend.herokuapp.com/api/login', user)
             .then(res => {
-                console.log("LOGIN RESPONSE", res.data)
                 localStorage.setItem('token', (res.data.token));
             })
             .catch(err => console.error('login error:', err))
@@ -51,7 +50,7 @@ class Login extends React.Component {
                     /> 
                 </form>
 
-                <div>
+                <div className="login-form-button">
                     <button onClick={this.loginHandler}>LOGIN</button>
                 </div>
             </div>

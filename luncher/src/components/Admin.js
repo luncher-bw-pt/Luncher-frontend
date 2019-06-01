@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { dispSchoolGrid } from '../actions';
 import './SchoolGrid.css';
 import Login from './Login';
-
+import '../App.css';
 
 
 class Admin extends React.Component {
@@ -22,8 +22,12 @@ class Admin extends React.Component {
 
     render() {
         return (
-            <div>
-                <Login />
+            <div className="admin-page">
+                <h1>Admin Login</h1>
+                <div className="admin-login">
+                    <Login />
+                </div>
+                
             </div>
         )
     }
