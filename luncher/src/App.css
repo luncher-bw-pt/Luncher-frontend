@@ -32,12 +32,36 @@
   }
 }
 
-.navigation {
+body {
+  font-size: 62.5%;
+  
+}
+
+html {
+  background-image: linear-gradient(grey, gold);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.nav {
   display: flex;
-  border: 1px solid red;
+  border-bottom: 3px solid gold;
   flex-direction: row;
   justify-content: space-between;
   margin: 10px 20px;
+  align-items: center;
+}
+
+.tabs {
+  border: 1px solid green;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  max-width: 500px;
+  width: 400px;
+  font-size: 1.4rem;
 }
 
 .login-section {
@@ -50,6 +74,40 @@ form {
   
   flex-direction: row;
   
+}
+
+a {
+  text-decoration: none;
+  color: black;
+
+}
+
+.tabs a {
+  display: flex;
+  flex-direction: row;
+  align-content: space-around;
+}
+
+.tabs a:hover {
+  color: gold;
+  -webkit-transform: scale(1.2);
+}
+
+.tabs a:active {
+  color: gold
+}
+
+a h1:hover {
+  -webkit-transform: scale(1.1);
+}
+
+a h1 {
+  font-size: 2rem;
+}
+
+
+a:active {
+  color: yellow;
 }
 
 .login-section button {

@@ -1,5 +1,4 @@
 import React from 'react';
-
 import axios from 'axios';
 
 
@@ -7,9 +6,9 @@ class Login extends React.Component {
     constructor() {
         super();
         this.state = {
-            username: "",
+            username: '',
             password: '',
-            token: ""
+            token: ''
         };
     }
 
@@ -53,7 +52,7 @@ class Login extends React.Component {
                 </form>
 
                 <div>
-                    <button>LOGIN</button>
+                    <button onClick={this.loginHandler}>LOGIN</button>
                 </div>
             </div>
         )
