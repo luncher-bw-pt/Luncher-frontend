@@ -1,12 +1,13 @@
 import React from 'react';
-//import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 //import { Link } from 'react-router-dom';
 //import SingleSchool from "./SingleSchool";
-import { connect } from 'react-redux';
+import {connect} from 'react-redux'
 import { dispSchoolGrid } from '../actions';
 import './SchoolGrid.css';
 import Login from './Login';
 import '../App.css';
+import Donor from './Donor';
 
 
 class Admin extends React.Component {
@@ -22,13 +23,15 @@ class Admin extends React.Component {
 
     render() {
         return (
+            <BrowserRouter>
             <div className="admin-page">
                 <h1>Admin Login</h1>
                 <div className="admin-login">
                     <Login />
-                </div>
-                
+                    <Route path="/donor" component={Donor} />  
+                </div>   
             </div>
+            </BrowserRouter>
         )
     }
 }

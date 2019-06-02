@@ -8,6 +8,9 @@ import Donor from './components/Donor';
 import SchoolGrid from './components/SchoolGrid';
 import Nav from './components/Nav';
 import SingleSchool from './components/SingleSchool';
+import Login from './components/Login';
+import PrivateRoute from './components/PrivateRoute'
+
 
 class App extends React.Component {
   render() {
@@ -18,6 +21,8 @@ class App extends React.Component {
           <Nav />
         </div>
         {/* <Route exact path='/' component={Home} /> */}
+        <Route path='/login' component={Login} />
+        <PrivateRoute path='/school' component={SchoolGrid} />
         <Route path='/admin' component={Admin} />
         <Route path='/donor' component={Donor} />
         <Route exact path='/school' component={SchoolGrid} />

@@ -20,11 +20,11 @@ class Donor extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="donor-page">
                 <h1>DONATE TODAY!</h1>
                 <h2>Click the school below that you wish to assist with your donation!</h2>
 
-                <ul className='listHead'>
+                <ul className='list-head'>
                     <li className="schoolName">School Name</li>
                     <li className="schoolState">State</li>
                     <li className="schoolZIP">ZIP Code</li>
@@ -34,7 +34,7 @@ class Donor extends React.Component {
 
                 {this.props.schools.map((school, id) => (
 
-                    <ul className='listMain'>
+                    <ul className='list-main'>
                         <Link to={`/school/${school.id}`} component={SingleSchool}>
                             <li className="schoolName">{school.schoolName}</li>
                         </Link>
