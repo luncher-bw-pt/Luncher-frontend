@@ -1,16 +1,13 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import { Link } from 'react-router-dom';
-
 import './App.css';
+import { Link, NavLink } from 'react-router-dom';
 import Admin from './components/Admin';
 import Donor from './components/Donor';
 import SchoolGrid from './components/SchoolGrid';
 import Nav from './components/Nav';
 import SingleSchool from './components/SingleSchool';
-import Login from './components/Login';
-import PrivateRoute from './components/PrivateRoute'
-
+import Register from './components/Register';
 
 class App extends React.Component {
   render() {
@@ -19,14 +16,14 @@ class App extends React.Component {
         <div className="nav">
         <Link to="/"><h1>LUNCHER</h1> </Link>
           <Nav />
+          <NavLink to="/register">Register</NavLink>
         </div>
         {/* <Route exact path='/' component={Home} /> */}
-        <Route path='/login' component={Login} />
-        <PrivateRoute path='/school' component={SchoolGrid} />
         <Route path='/admin' component={Admin} />
         <Route path='/donor' component={Donor} />
         <Route exact path='/school' component={SchoolGrid} />
         <Route path='/school/:id' component={SingleSchool} />
+        <Route path='/register' component={Register} />
       </div>
     );
     }

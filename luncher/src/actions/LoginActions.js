@@ -59,5 +59,4 @@ export const getAdmin = () => dispatch => {
                 payload: err
             })
         })
-
 }

@@ -48,6 +48,14 @@ h1 {
 
 /* ------------------NAV BAR ------------------------*/
 
+/* .app-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  border: 1px solid red;
+} */
+
 
 .nav {
   display: flex;
@@ -121,6 +129,20 @@ a:active {
 
 
 
+
+/* ---------------------REGISTER SECTION--------------------*/
+.register-section {
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 50px;
+  height: 40vh;
+}
+
+.register-section form {
+  margin: 0 auto;
+}
 
 
 
