@@ -37,7 +37,7 @@ export const loginSuccess = (user) => dispatch =>{
 }
 
 
-export const getAdmin = () => dispatch => {
+export const getAdmin = () => dispatch => { 
     dispatch({type: FETCH_ADMIN_START})
 
     axios.get(

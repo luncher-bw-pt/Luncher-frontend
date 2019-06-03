@@ -129,14 +129,22 @@ a:active {
 
 
 
+/* ---------------------HOME SECTION--------------------*/
+.home-page {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  margin-top: 50px;
+}
+
+
 
 /* ---------------------REGISTER SECTION--------------------*/
 .register-section {
-  border: 1px solid red;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 50px;
   height: 40vh;
 }
 
@@ -229,3 +237,27 @@ button:hover {
 /* .list-main li {
   margin: 0 10px;
 }  */
+
+
+
+
+/* ---------------------ADMIN FORM--------------------*/
+.school-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.school-form form {
+  display: flex;
+  flex-direction: row;
+}
+
+.school-form input {
+  max-width: 300px;;
+  width: 100px;
+  height: 20px;
+  margin: 5px 0;
+  border-radius: 8px;
+}

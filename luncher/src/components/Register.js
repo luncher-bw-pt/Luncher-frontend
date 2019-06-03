@@ -28,7 +28,7 @@ class Register extends React.Component {
     e.preventDefault()
     console.log('Sign Up Successful!')
     let user = {firstName: this.state.firstName, 
-                lastName: this.state.password,
+                lastName: this.state.lastName,
                 email: this.state.email,
                 password: this.state.password,
                 role: this.state.role}
@@ -36,16 +36,15 @@ class Register extends React.Component {
     axios
       .post('https://luncher-backend.herokuapp.com/api/register', user)
       .then(response => {
-        console.log(response.data)
+        console.log(13, response.data)
         localStorage.setItem('token', (response.data.token));
       })
       .catch(err => console.error("signup error:", err));
   }
 
 
-  onChangeHandler = (e) => {
-    const {name, value} = e.target;
-    this.setState({[name]: value});
+  handleChange = (e) => {
+    this.setState({[e.target.name]: e.target.value});
   };
 
 
@@ -53,7 +52,7 @@ class Register extends React.Component {
     return (
         <div className="register-section">
             <h1>Register Today!</h1>
-            <form onSubmit={this.handleSubmit}> 
+            <form onSubmit={this.registerHandler}> 
                 <input 
                     name="firstName"
                     placeholder="First Name"
@@ -64,25 +63,25 @@ class Register extends React.Component {
                     name="lastName"
                     placeholder="Last Name"
                     type="text"
-                    onChange={this.handlechange}
+                    onChange={this.handleChange}
                 /> 
                 <input 
                     name="email"
                     placeholder="Email"
                     type="text"
-                    onChange={this.handlechange}
+                    onChange={this.handleChange}
                 /> 
                 <input 
                     name="password"
                     placeholder="Password"
                     type="password"
-                    onChange={this.handlechange}
+                    onChange={this.handleChange}
                 /> 
                 <input 
                     name="role"
                     placeholder="Role(Admin or Donor)"
                     type="text"
-                    onChange={this.handlechange}
+                    onChange={this.handleChange}
                 /> 
             <div className="login-form-button">
                 <button text="Register" onClick={this.registerHandler}>Register</button>

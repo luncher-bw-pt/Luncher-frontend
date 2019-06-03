@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import {withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {loginSuccess} from '../actions/LoginActions';
+
 
 class Login extends Component {
     state = {
@@ -45,19 +47,19 @@ class Login extends Component {
 
     handleSubmit = (e) =>{
         e.preventDefault();
+        console.log(this.state.creds);
         this.props.loginSuccess(this.state.creds)
+            .then(() => {
+                this.props.history.push('/adminLoggedIn');
+            });
 
-    }
+    } 
 
     render() {
-
-        if(this.props.isloggedin){
-            this.props.history.push("/")
-        }
-
         console.log(this.props.loggedin, this.props.isfetching)
         return (
             <div className="login-section">
+                <h1>Login</h1>
                 <form onSubmit={this.handleSubmit}> 
                     <input 
                         name="email"
@@ -68,11 +70,11 @@ class Login extends Component {
                     <input 
                         name="password"
                         placeholder="Password"
-                        type="text"
-                        onChange={this.handlechange}
+                        type="password"
+                        onChange={this.handleChange}
                     /> 
                     <div className="login-form-button">
-                <button value ="submit">LOGIN</button>
+                <button>LOGIN</button>
                 </div>
                 </form>
 
@@ -88,7 +90,7 @@ const mapStateToProps = state =>({
     isfetching:state.isfetching
 })
 
-export default connect (
+export default withRouter(connect (
     mapStateToProps,
     {loginSuccess}
-)(Login)
+)(Login))
