@@ -6,9 +6,10 @@ import { connect } from 'react-redux';
 import { dispSchoolGrid } from '../../actions';
 import '../SchoolGrid.css';
 import AddSchool from '../AddSchool';
+import axios from 'axios';
 
 
-class Donor extends React.Component {
+class AdminToSchool extends React.Component {
     state = {
         schools: [],
         error: null
@@ -18,6 +19,28 @@ class Donor extends React.Component {
         this.props.dispSchoolGrid();
         console.log(this.props.schools);
     }
+
+    // eraseSchool = event => {
+    //     event.preventDefault();
+    //       const {schoolName, state, zip, fundsNeeded} = this.state;
+
+    deleteSchool = adminId => {
+        
+            //console.log(schoolId);
+            axios
+                .delete(`https://luncher-backend.herokuapp.com/api/admin/school/${adminId}`, 
+                {headers: {Authorization:localStorage.getItem('token')}})
+                .then(res => {
+                    this.setState({
+                        schools: res.data
+                    })
+                //     dispatch({ type: DELETE_SCHOOL, payload: res.data })
+                })
+                .catch(err => {
+                    // dispatch({ type: FAILURE, payload: err })
+                })
+        }
+    
 
     render() {
         return (
@@ -36,7 +59,7 @@ class Donor extends React.Component {
                 </ul>
 
                 {this.props.schools.map((school, id) => (
-
+                    <div className="clickable-school-grid" key={id}>
                     <ul className='list-main'>
                         <Link to={`/school/${school.id}`} component={SingleSchool}>
                             <li className="schoolName">{school.schoolName}</li>
@@ -46,7 +69,8 @@ class Donor extends React.Component {
                         <li className="schoolFunds">{school.fundsNeeded}</li>
                         <li className="schoolEmail">{school.contact}</li>
                     </ul>
-
+                    <button onClick={() => this.deleteSchool()}>Delete</button> 
+                    </div> 
                 ))}
 
             </div>
@@ -64,6 +88,7 @@ const mapStateToProps = state => {
 export default connect(
     mapStateToProps,
     {
-        dispSchoolGrid
+        dispSchoolGrid,
+        // deleteSchool
     }
-)(Donor);
+)(AdminToSchool);

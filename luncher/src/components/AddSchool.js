@@ -14,7 +14,7 @@ class AddSchool extends Component {
 
   fetchSchool = () => {
     axios.get('https://luncher-backend.herokuapp.com/api/school')
-        .then(res => this.setState({ smurfs: res.data }))
+        .then(res => {console.log(res); this.setState({ school: res.data })})
         .catch(err => console.log(err));
   }
 
@@ -23,10 +23,12 @@ class AddSchool extends Component {
       const {schoolName, state, zip, fundsNeeded} = this.state;
 
       axios.post('https://luncher-backend.herokuapp.com/api/admin/school ',
-                   {schoolName, state, zip, fundsNeeded })
+                   {schoolName, state, zip, fundsNeeded }, {
+                    headers: { Authorization: localStorage.getItem("token") }
+                  })
           .then(res => {
-              this.props.fetchSchool();
-              // this.props.history.push('/');
+              this.fetchSchool();
+              window.location.reload();
           })
           .catch(err => console.log(err));
 
@@ -64,7 +66,7 @@ class AddSchool extends Component {
           <input
             onChange={this.handleInputChange}
             placeholder="zip"
-            value={this.state.sip}
+            value={this.state.zip}
             name="zip"
             type="number"
           />
@@ -77,7 +79,6 @@ class AddSchool extends Component {
           />
           </form>
           <button type="submit" onClick={this.addSchool}>Add School</button>
-            <button type="submit">Delete Funds</button>
         
       </div>
     );

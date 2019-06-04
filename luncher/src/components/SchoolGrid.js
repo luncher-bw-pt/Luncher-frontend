@@ -26,8 +26,9 @@ class SchoolGrid extends React.Component {
                         <td className="schoolFunds">Funds Needed</td>
                         <td className="schoolEmail">Contact Email</td>
                     </tr>
-
+                    
                     {this.props.schools.map((school, id) => (
+                        <div>
                         <tr className='.mainTable'>
                             <td className="schoolName">{school.schoolName}</td>
                             <td className="schoolState">{school.state}</td>
@@ -35,8 +36,11 @@ class SchoolGrid extends React.Component {
                             <td className="schoolFunds">{school.fundsNeeded}</td>
                             <td className="schoolEmail">{school.contact}</td>
                         </tr>
+                        
+                        </div>                     
                     ))}
                 </table>
+                
             </div>
         )
     }

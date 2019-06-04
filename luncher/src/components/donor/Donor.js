@@ -29,12 +29,12 @@ class Donor extends React.Component {
 
                     {this.props.schools.map((school, id) => (
                         <tr className='.mainTable'>
-                            <td className="schoolName">{school.schoolName}</td>
+                            <td className="schoolName">{school.schoolName} </td>
                             <td className="schoolState">{school.state}</td>
                             <td className="schoolZIP">{school.zip}</td>
                             <td className="schoolFunds">{school.fundsNeeded}</td>
                             <td className="schoolEmail">{school.contact}</td>
-                            {/* <div>key={school.id}</div> */}
+                            key={id}
                         </tr>
                     ))}
                 </table>

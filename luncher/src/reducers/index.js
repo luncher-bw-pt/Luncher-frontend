@@ -13,6 +13,13 @@ export const schoolReducer = (state = initialState, action) => {
                 error: null
             }
         }
+        // case DELETE_SCHOOL: {
+        //     return {
+        //         ...state,
+        //         schools: action.payload,
+        //         error: null
+        //     }
+        // }
         case SUCCESS: {
             console.log(action.payload)
             return {

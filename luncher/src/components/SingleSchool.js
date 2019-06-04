@@ -9,7 +9,7 @@ import { dispSchoolGrid } from '../actions';
 class SingleSchool extends React.Component {
         state = {
             school: '',
-            Donated: ''
+            Donor: ''
         }
     
 
@@ -27,6 +27,18 @@ class SingleSchool extends React.Component {
             })
             .catch(err => {
                 console.log(err)
+            });
+        }
+
+        
+
+        handleChange = (e) =>{
+            e.preventDefault();
+            this.setState({
+                creds:{
+                    ...this.state.creds,
+                    [e.target.name] : e.target.value
+                }
             });
         }
  
@@ -47,6 +59,17 @@ class SingleSchool extends React.Component {
                 </div>
                 <div className="school-contact">
                 <strong>Contact</strong>: <em>{contact}</em>
+                </div>
+                <div>
+                    <form onSubmit={this.fetchSchool}>
+                        <input 
+                            name="neededFunds"
+                            placeholder="Add Funds"
+                            type="number"
+                            onChange={this.handleChange}
+                        />
+                        <button>Add Funds</button>
+                    </form>
                 </div>
 
             </div>

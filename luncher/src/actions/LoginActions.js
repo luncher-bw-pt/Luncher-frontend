@@ -12,12 +12,12 @@ export const loginSuccess = (user) => dispatch =>{
     dispatch({type: LOGIN_FETCHING})
 
     return axios.post(
-        `https://luncher-backend.herokuapp.com/api/login`, user
+        `https://luncher-backend.herokuapp.com/api/login`, user,
+        {headers: {Authorization:localStorage.getItem('token')}}
     )
         .then(res =>{
-            console.log(res
-            )
-            localStorage.setItem('token', res.data.payload)
+            console.log(2333, res)
+            localStorage.setItem('token', res.data.token)
             dispatch({
                 type:LOGIN_SUCCESS,
                 payload: res.data.payload,
@@ -42,7 +42,7 @@ export const getAdmin = () => dispatch => {
 
     axios.get(
         `https://luncher-backend.herokuapp.com/api/admin`,
-        {headers: {authorization:localStorage.getItem('token')}}
+        {headers: {Authorization:localStorage.getItem('token')}}
     )
         .then(res =>{
                 console.log('res')
