@@ -1,58 +1,75 @@
-import React from 'react';
+import React, { Component } from 'react';
+import {withRouter} from 'react-router-dom';
+import {connect} from 'react-redux';
+import {loginSuccess} from '../actions/LoginActions';
 
-import axios from 'axios';
 
+class Login extends Component {
+    state = {
+        creds:{
+            email: '',
+            password: ''
+        }
+    };
 
-class Login extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            username: "",
-            password: '',
-            token: ""
-        };
+    handleChange = (e) =>{
+        e.preventDefault();
+        this.setState({
+            creds:{
+                ...this.state.creds,
+                [e.target.name] : e.target.value
+            }
+        });
     }
 
-    loginHandler = e => {
-        e.preventDefault()
-        console.log('Login Successful')
-        let user = {username: this.state.username,
-                    password: this.state.password
-                }
-        console.log(user)
-        axios
-            .post('https://luncher-backend.herokuapp.com', user)
-            .then(res => {
-                console.log("LOGIN RESPONSE", res.data)
-                localStorage.setItem('token', (res.data.token));
-            })
-            .catch(err => console.error('login error:', err))
+    handleSubmit = (e) =>{
+        e.preventDefault();
+        console.log(this.state.creds);
+        this.props.loginSuccess(this.state.creds)
+            .then(() => {
+                this.props.history.push('/adminLoggedIn');
+            });
 
-    }
+    } 
 
     render() {
+        console.log(this.props.loggedin, this.props.isfetching)
         return (
-            <form > 
-                <input 
-                    name="username"
-                    placeholder="Username"
-                    type="text"
-                    onChange={this.changeHandler}
-                />
-                <input 
-                    name="password"
-                    placeholder="Password"
-                    type="text"
-                    onChange={this.changeHandler}
-                />
+            <div className="login-section">
+                <h1>Login</h1>
+                <form onSubmit={this.handleSubmit}> 
+                    <input 
+                        name="email"
+                        placeholder="Email"
+                        type="text"
+                        value={this.state.creds.email}
+                        onChange={this.handleChange}
+                    />
+                    <input 
+                        name="password"
+                        placeholder="Password"
+                        type="password"
+                        value={this.state.creds.password}
+                        onChange={this.handleChange}
+                    /> 
+                    <div className="login-form-button">
                 <button>LOGIN</button>
-            
-            </form>
+                </div>
+                </form>
+
+                
+            </div>
         )
     }
-};
+}
 
 
-export default Login;
+const mapStateToProps = state =>({
+    isloggedin:state.loggingIn,
+    isfetching:state.isfetching
+})
 
-
+export default withRouter(connect (
+    mapStateToProps,
+    {loginSuccess}
+)(Login))

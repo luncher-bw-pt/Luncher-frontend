@@ -31,3 +31,285 @@
     transform: rotate(360deg);
   }
 }
+
+body {
+  font-size: 62.5%;
+  font-family:  sans-serif, "Trebuchet MS", Helvetica;
+}
+
+html {
+  height: 100vh;
+  background: linear-gradient(  #fff, #fff 50%, gold 90%);
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+/* ------------------NAV BAR ------------------------*/
+
+/* .app-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  border: 1px solid red;
+} */
+
+
+.nav {
+  display: flex;
+  border-bottom: 3px solid gold;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 10px 20px;
+  align-items: center;
+}
+
+.active {
+  background-color: gold;
+  color: white;
+  border-radius: 8px;
+  transform: scale(1.3);
+}
+
+.active:hover  {
+  color: white !important;
+}
+
+.tabs {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  max-width: 500px;
+  width: 400px;
+  font-size: 1.4rem;
+}
+
+.login-section {
+  display: flex;
+  flex-direction: row;
+}
+
+
+a {
+  text-decoration: none;
+  color: black;
+
+}
+
+.tabs a {
+  display: flex;
+  flex-direction: row;
+  align-content: space-around;
+}
+
+.tabs a:hover {
+  border-radius: 8px;
+  transform: scale(1.3);
+  color: gold;
+}
+
+.tabs a:active {
+  color: gold
+}
+
+a h1:hover {
+  transform: scale(1.1);
+}
+
+a h1 {
+  font-size: 2rem;
+}
+
+
+a:active {
+  color: gold;
+}
+
+
+
+/* ---------------------HOME SECTION--------------------*/
+.home-page {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  margin-top: 50px;
+}
+
+
+
+/* ---------------------REGISTER SECTION--------------------*/
+.register-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 40vh;
+}
+
+.register-section form {
+  margin: 0 auto;
+}
+
+
+
+/* ---------------------LOG IN SECTION--------------------*/
+.admin-page {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 50px;
+  height: 40vh;
+}
+
+.admin-page h1 {
+  font-size: 2.4rem;
+}
+
+.admin-login {
+  display: flex;
+  margin: 0 auto;
+}
+
+.login-section {
+  display: flex;
+  flex-direction: column;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+input {
+  max-width: 300px;;
+  width: 200px;
+  height: 40px;
+  margin: 5px 0;
+  border-radius: 8px;
+
+}
+
+button {
+  height: 30px;
+  background-color: gold;
+  color: white;
+  border-radius: 8px;
+}
+
+button:hover {
+  transform: scale(1.2);
+}
+
+.login-form-button {
+  margin: 0 auto;  
+}
+
+
+
+/* ---------------------DONOR PAGE--------------------*/
+
+.list-head {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  max-width: 800px;
+  width: 600px;
+  font-size: 1rem;
+  margin-bottom: 5px;
+  font-weight: bold;
+  border-bottom: 3px solid gold;
+
+}
+
+/* .list-head li {
+  margin: 0 10px;
+}  */
+
+.list-main {
+  font-size: .9rem;
+  border-bottom: 1px solid lightgray;
+
+}
+
+/* .list-main li {
+  margin: 0 10px;
+}  */
+
+
+
+
+/* ---------------------ADMIN FORM--------------------*/
+.school-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.school-form form {
+  display: flex;
+  flex-direction: row;
+}
+
+.school-form input {
+  max-width: 300px;;
+  width: 100px;
+  height: 20px;
+  margin: 5px 0;
+  border-radius: 8px;
+}
+
+
+/* ---------------------SINGLE SCHOOL FORM--------------------*/
+.card-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 1.8rem;
+  margin: 50px 80px 0 80px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+  transition: 0.3s;
+  height: 35vh;
+}
+
+.card-wrapper:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.9);
+}
+
+
+.card-wrapper form {
+  max-width: 300px;
+  width: 100px;
+  margin: 0 auto;
+}
+
+.card-wrapper form input {
+  height: 20px;
+  width: 100px;
+}
+
+.card-wrapper form button {
+  width: 50px;
+  margin: 0 auto;
+}
+
+/* .card-wrapper h2 {
+  border-bottom: 3px solid red;
+  margin: 0 20px;
+} */
+
+.clickable-school-grid {
+  display: flex;
+  flex-direction: row;
+  margin: 0 140px;  
+}
+
+.clickable-school-grid button {
+  right: 20px;
+  background-color: red;
+  height: 20px;
+  
+}

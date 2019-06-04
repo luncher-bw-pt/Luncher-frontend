@@ -1,0 +1,41 @@
+table {
+    margin: 0 auto;
+    border: solid black 1px;
+    max-width: 600px;
+}
+
+.listHead {
+    font-weight: bolder;
+    text-align: center;
+    margin: 0 auto;
+}
+
+ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+
+
+.schoolName {
+    min-width: 300px
+}
+
+.schoolState {
+    min-width: 50px
+}
+
+.schoolZIP {
+    min-width: 50px
+}
+
+.schoolFunds {
+    min-width: 100px
+}
+
+.schoolEmail {
+    min-width: 100px
+}
